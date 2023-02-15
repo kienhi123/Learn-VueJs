@@ -9,6 +9,11 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
 
+    <style>
+        .demo {
+            background-color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,6 +23,9 @@
         <h2>{{about}}</h2>
         <input v-model="username" type="text" placeholder="NHập username">
         <textarea v-model="about" cols="30" rows="10"></textarea>
+        <button v-on:click="changeActive">Change Active</button>
+        <button v-on:click="changeError">Change Error</button>
+        <div class="demo" v-bind:class="objClass">Hello World</div>
     </div>
 
 </body>
@@ -28,11 +36,27 @@
         el: '#app',
         data: {
             username: 'Tran van kien',
-            about: ''
+            about: '',
+            textClass: "active",
+            isActive: false,
+            isError: true
         },
         methods: {
-
+            changeActive() {
+                this.isActive = !this.isActive
+            },
+            changeError() {
+                this.isError = !this.isError
+            }
         },
+        computed: {
+            objClass: function () {
+                return {
+                    active: this.isActive,
+                    error: this.isError
+                }
+            }
+        }
     })
 </script>
 
