@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events VueJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+
+    <style>
+        .list-books {
+            display: flex;
+
+        }
+
+        .list-books .book {
+            width: 200px;
+            margin: 30px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .price {
+            color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+
+        <ul>
+            <li v-for="(item, index) in scores">{{index}}:{{item}}</li>
+        </ul>
+        <div class="list-books">
+            <div v-for="(book,index) in listBooks" class="book" v-bind="index">
+                <div class="title">{{book.title}}</div>
+                <span class="price">{{book.price}}</span>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            scores: {
+                math: 9.0,
+                english: 7.5,
+                music: 7
+            },
+
+            listBooks: [
+                {
+                    "id": 1,
+                    "title": "Hôm nay là một ngày đẹp trời",
+                    "price": "20.000 VNĐ"
+                },
+                {
+                    "id": 2,
+                    "title": "Hãy vui lên",
+                    "price": "80.000 VNĐ"
+                },
+                {
+                    "id": 3,
+                    "title": "Cố gắng mỗi ngày",
+                    "price": "60.000 VNĐ"
+                },
+            ]
+        },
+        methods: {
+
+        },
+    })
+</script>
+
+</html>

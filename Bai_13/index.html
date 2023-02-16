@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>
+        Đây là header
+    </h1>
+    <div id="app">
+        <div class="container">
+            <div class="card">
+                <div class="card__header">
+                    <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image"
+                        width="600">
+                </div>
+                <div class="card__body">
+                    <span class="tag tag-blue">Technology</span>
+                    <a v-bind:href="url" target="target">{{title}}</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo
+                        doloribus. Doloremque, nihil! At ea atque quidem!</p>
+                    <span class="number">{{price}}</span>
+                    {{check ? 'Hàng đẹp quá' :' Hàng xấu'}}
+                </div>
+                <div class="card__footer">
+                    <div class="user">
+                        <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
+                        <div class="user__info">
+                            <h5>Jane Doe</h5>
+                            <small>2h ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__header">
+                    <img src="https://source.unsplash.com/600x400/?food" alt="card__image" class="card__image"
+                        width="600">
+                </div>
+                <div class="card__body">
+                    <span class="tag tag-brown">Food</span>
+                    <h4>Delicious Food</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo
+                        doloribus. Doloremque, nihil! At ea atque quidem!</p>
+                </div>
+                <div class="card__footer">
+                    <div class="user">
+                        <img src="https://i.pravatar.cc/40?img=2" alt="user__image" class="user__image">
+                        <div class="user__info">
+                            <h5>Jony Doe</h5>
+                            <small>Yesterday</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h1>Footer</h1>
+</body>
+
+<script src="main.js"></script>
+
+</html>
