@@ -34,7 +34,7 @@
 
 <body>
     <div id="app">
-
+        <div class="user" v-for="user in userActive">{{user.email}}</div>
         <ul>
             <li v-for="(item, index) in scores">{{index}}:{{item}}</li>
         </ul>
@@ -54,6 +54,17 @@
     var app = new Vue({
         el: '#app',
         data: {
+            arrUser: [
+
+                { email: "test1@gmail.com", isActive: true },
+                { email: "test2@gmail.com", isActive: true },
+                { email: "test3@gmail.com", isActive: false },
+                { email: "test4@gmail.com", isActive: true },
+                { email: "test5@gmail.com", isActive: false },
+
+            ],
+
+
             scores: {
                 math: 9.0,
                 english: 7.5,
@@ -81,7 +92,14 @@
         methods: {
 
         },
-    })
+        computed: {
+            userActive() {
+                return this.arrUser.filter(function (u) {
+                    return u.isActive;
+                })
+            }
+        }
+    });
 </script>
 
 </html>
