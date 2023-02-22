@@ -6,12 +6,24 @@ var vueInstance = new Vue({
         target: '_blank',
         price: "200.000 VNĐ",
         check: true,
+        description: '<p>Mô tả sản phẩm</p>',
+        cartNumber: 6,
+        listDanhMuc: [
+            'Quần áo',
+            'Điện thoại',
+            'Giải trí',
+            'Văn hóa'
 
 
+        ]
     },
+
     methods: {
         say: function (text) {
             return "Hello" + text;
+        },
+        handleAddToCart() {
+            this.cartNumber += 1;
         }
     },
 });

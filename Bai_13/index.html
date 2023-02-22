@@ -13,9 +13,15 @@
 <body>
     <h1>
         Đây là header
+
     </h1>
     <div id="app">
         <div class="container">
+            <div v-html="description">{{description}}</div>
+            <ul>
+                <li v-for="item in listDanhMuc">{{item}}</li>
+            </ul>
+            <div class="cart">Giỏ hàng {{cartNumber}}</div>
             <div class="card">
                 <div class="card__header">
                     <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image"
@@ -28,6 +34,7 @@
                         doloribus. Doloremque, nihil! At ea atque quidem!</p>
                     <span class="number">{{price}}</span>
                     {{check ? 'Hàng đẹp quá' :' Hàng xấu'}}
+                    <button v-on:click="handleAddToCart" class="add-to-cart">Add to cart</button>
                 </div>
                 <div class="card__footer">
                     <div class="user">
